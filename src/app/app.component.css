@@ -1,0 +1,11 @@
+::ng-deep .mat-card {
+    border: 1px solid #CFD8DC !important; 
+    border-radius: 15px !important; 
+    margin: 5px !important;
+};
+
+::ng-deep .mat-card:hover {
+    box-shadow: 0 0 5px #FF0000 !important;
+    transform: translate(0, -6px) rotate(2deg) !important;
+};
+

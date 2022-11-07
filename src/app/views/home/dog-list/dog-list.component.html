@@ -1,0 +1,46 @@
+<mat-tab-group style="background-color: rgb(229, 229, 229);" mat-align-tabs="start" class="container-dogs">
+  <mat-tab label="Todas as raças" >
+    <form [formGroup]="dogForm">
+      <p>
+        <mat-form-field style="margin-top: 20px; margin-left: 30px;" appearance="legacy">
+          <mat-label>Digite a raça do doguinho</mat-label>
+          <input class="inputDogs" [(ngModel)]="name" type="text" matInput formControlName="name" name="name" placeholder="Raça do doguinho">
+        </mat-form-field>
+        <button style="margin-left: 20px;"mat-stroked-button color="primary" (click)="getInfosName(name)">Buscar</button>
+      </p>
+    </form>
+
+    <div  fxLayout="row wrap" fxLayoutAlign="space-evenly center"  style="padding: 1%;">
+        <ng-container *ngFor="let infos of infosList" style="margin: 0.5%" >
+          <mat-card class="mat-card-dogs" 
+          fxFlex="0 1 calc(33.3% - 11px)" 
+          fxFlex.lt-md="0 1 calc(50% - 11px)" 
+          fxFlex.lt-sm="100%">
+            <mat-card-title class="mat-card-title-dogs">
+              <div class="row">
+                <p>
+                  <span style="font-size: 1.25rem;" fxFlex="50" fxLayoutAlign="start center">{{infos.name}}</span>
+                  <span style="font-size: 1.25rem;" fxFlex>{{infos.origin}}</span>
+                  <mat-icon style="cursor: pointer;" >favorite</mat-icon>
+                </p>
+              </div>
+            </mat-card-title>
+                  
+              <div fxLayoutAlign="center">
+                <img style="width: 250px; height: 150px;" src="{{infos.image.url}}"/>
+              </div>
+
+              <mat-card-content>
+                 <p>
+                    <span style="font-size: 0.688rem; font-weight: bold; margin-top: 10px;" fxFlex="85" fxLayoutAlign="start center">{{infos.temperament}}</span>
+                    <span style="font-size: 0.90rem; margin-top: 10px;" fxFlex>{{infos.life_span}}</span> <!-- life_span -->
+                 </p>
+              </mat-card-content>
+          </mat-card>
+        </ng-container>
+    </div>
+
+    <mat-paginator style="background-color: rgb(229, 229, 229);" (page)="onPageChange($event)" [length]="100" [pageSize]="12" [pageSizeOptions]="[12, 30, 60]" aria-label="Select page">
+    </mat-paginator>
+  </mat-tab>
+</mat-tab-group>

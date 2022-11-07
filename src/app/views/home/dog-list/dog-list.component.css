@@ -1,0 +1,52 @@
+::ng-deep .mat-card:hover {
+    box-shadow: 0 0 5px #FF0000;
+    transform: translate(0, -6px) rotate(2deg) !important;
+};
+
+::ng-deep .mat-form-field {
+    margin-top: 20px !important; 
+    margin-left: 30px !important;
+};
+
+.container-dogs {
+    display: flex;
+    justify-content: space-evenly
+};
+
+.inputDogs {
+    background-color: white;
+}
+
+.mat-card {
+    border: 1px solid #CFD8DC !important ; 
+    border-radius: 15px !important ; 
+    margin: 5px !important ;
+};
+
+.mat-card-dogs {
+    border: 1px solid #CFD8DC;
+    border-radius: 15px;
+    padding-top: 15px;
+    padding-left: 0%;
+    padding-right: 0%;
+    padding-bottom: 0%;
+    margin: 5px;
+};
+
+.mat-card-dogs:hover {
+    box-shadow: 0 0 5px #FF0000;
+    transform: translate(0, -6px) rotate(2deg);
+};
+
+.mat-card-title-dogs {
+    padding-left: 10px;
+    padding-top: 0px;
+    padding-right: 15px;
+    margin-bottom: 0px;
+    min-height: 70px;
+};
+
+.imgDog {
+    width: 100px;
+    height: 100px;
+}
